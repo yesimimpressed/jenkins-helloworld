@@ -1,10 +1,10 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker 'maven:3.3.3' }
+    agent { docker { image 'python:3.10.1-alpine' } }
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
+                sh 'python --version'
             }
         }
     }
